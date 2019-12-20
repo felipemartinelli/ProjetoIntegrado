@@ -1,0 +1,9 @@
+img{
+    width: 80px;
+    height: 80px;
+}
+
+#card{
+    display: flex;
+    justify-content: right;
+}

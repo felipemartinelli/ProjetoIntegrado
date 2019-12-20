@@ -1,16 +1,69 @@
-<div class="container-fluid">
-    <div class="row">
-      <nav class="navbar navbar-expand-lg navbar-white bg-white">
 
-      <a [routerLink]="'/home'" class="titulo"><strong><h1> Click<strong>In</strong> </h1> </strong></a>
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/cadeira-de-roda.gif" id="gif" alt="cadeira de rodas em movimento">
-      </a>
-      <a class="nav-link" [routerLink]="'/quemsomos'">Quem Somos</a>
-      <a class="nav-link" href="#">Embaixadores</a>
-      <a class="nav-link" [routerLink]="'/contato'">Contato</a>
-      <a class="nav-link" href="#">Parceria</a>
-    </nav>
+    <div class="row">
+        <div class="col-md-7">
+            <nav class="navbar navbar-expand-lg navbar-transparent ">
+  
+                <a [routerLink]="'/home'" class="titulo"><strong><h1> Click<strong>In</strong> </h1> </strong></a>
+                <a class="navbar-brand" href="#">
+                 
+              </a>
+                <a class="nav-link" [routerLink]="'/quemsomos'">Quem Somos</a>
+                <a class="nav-link" [routerLink]="'/feed'">Feed</a>
+                <a class="nav-link" [routerLink]="'/contato'">Contato</a>
+               
+              </nav>
+        </div>
+  
+        <div class="col-md-2">
+  
+        </div>
+  
+        <div class="col-md-2">
+            <div class="col-md-4-mb-10 mt-3 itenNav">
+                <nav class="nav nav-pills nav-fill">
+                <a class="nav-item nav-link text-secondary" href="#">Cadastre-se</a>
+                <button type="button"  data-toggle="modal" data-target="#modalExemplo" class="btn btn-outline-dark">Entrar</button>
+                </nav>
+                </div>
+                
+        </div>
+        <!-- Modal -->
+  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="card-title text-center">
+                  Entrar
+              </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="form-signin">
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label for="inputEmail">E-mail</label>
+                </div>
+  
+                <div class="form-label-group">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label for="inputPassword">Senha</label>
+                </div>
+  
+                <div class="custom-control custom-checkbox mb-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Lembrar-me</label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                <hr class="my-4">
+                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Entrar com Google</button>
+                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Entra com Facebook</button>
+              </form>
+          </div>
+          
+        </div>
+      </div>
     </div>
-   
-</div>
+       
+      </div>

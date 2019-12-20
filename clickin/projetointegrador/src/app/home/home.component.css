@@ -7,14 +7,14 @@ h1{
     color: black;
     text-align: left;
     padding-top: 130px;
-    margin-left: 50px;
+    margin-left: 160px;
 }
 #simbolo{
     position: absolute; 
     left: 800px; /* posiciona a 90px para a esquerda */ 
-    top: 100px; /* posiciona a 70px para baixo */
-    width: 400px;
-    right: 400px;
+    top: 120px; /* posiciona a 70px para baixo */
+    width: 220px;
+    right: 220px;
 }
 .itens{
     margin-top: 20%;
