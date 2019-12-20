@@ -1,0 +1,67 @@
+<div class="row">
+
+    <div class="col-md-12">
+        <h3> Fale Conosco </h3>
+    </div>
+
+</div>
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+
+            <div id="iframe">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="validationTooltip01"> Nome Completo </label>
+                            <input type="text" class="form-control" placeholder="Digite o seu Nome Completo" value="" required [(ngModel)]="nomeCompleto" [ngModelOptions]="{standalone: true}">
+                            <span *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label for="validationTooltip01"> Email </label>
+                            <input type="text" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Digite o seu e-mail" value=""
+                                required>
+                                <span *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label for="validationTooltip04">Telefone</label>
+                            <input type="text" class="form-control" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone"
+                                required>
+                                <span *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-2">
+                        <div class="col-md-12">
+                            <label for="exampleFormControlTextarea1">Mensagem</label>
+                            <textarea class="form-control" [(ngModel)]="mensagem" [ngModelOptions]="{standalone: true}" rows="3"></textarea>
+                            <span *ngIf='_msgErroMensagem'>{{_msgErroMensagem}}</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row mt-2 mb-5" id="bot">
+                        <div class="col-md-3">
+                        </div>
+
+                        <div class="col-md-6" id="botao">
+                            <button class="btn btn-outline-dark" (click)="valida();">Enviar</button>
+                        </div>
+                        <div class="col-md-3">
+                        </div>
+                    </div>
+                </form>
+            </div>

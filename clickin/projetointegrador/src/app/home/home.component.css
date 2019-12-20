@@ -1,0 +1,27 @@
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+h1{
+    color: black;
+    text-align: left;
+    padding-top: 130px;
+    margin-left: 50px;
+}
+#simbolo{
+    position: absolute; 
+    left: 800px; /* posiciona a 90px para a esquerda */ 
+    top: 100px; /* posiciona a 70px para baixo */
+    width: 400px;
+    right: 400px;
+}
+.itens{
+    margin-top: 20%;
+    display: flex;
+    justify-content: baseline;
+    left: 2%;
+}
+.itenNav{
+    margin-left: 6%;
+}

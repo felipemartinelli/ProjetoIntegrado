@@ -1,0 +1,98 @@
+#paragrafo{
+    text-align: center;
+}
+
+.footer {
+    
+    
+    width: 100%;
+    background-color: rgb(42, 63, 50);
+    color:whitesmoke;
+    text-align: center;
+    opacity: 10% ;
+    
+    
+}
+p{
+    text-align: justify;
+}
+
+.tamanho-img{
+    width: 100px;
+    height: 100px;
+}
+#gif{
+    width: 70px;
+    height: 50px ;
+}
+
+#projeto{
+    text-align: justify;
+    border-style: solid;
+   
+}
+
+h2{
+    text-align: center;
+}
+
+.footer {
+    
+
+    left: 0%;
+    bottom: 0;
+    width: 100%;
+    
+    background-color: white;
+    color:black;
+    text-align: center;
+    opacity: 100%
+   
+    
+    
+}
+p{
+    text-align: justify;
+}
+
+.tamanho-img{
+    width: 100px;
+    height: 100px;
+}
+
+.tamanho-imagem{
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+}
+
+
+#gif{
+    width: 80px;
+    height: 50px ;
+}
+
+
+
+h3{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+}
+h2{
+    font-family: 'Bebas Neue', cursive;
+}
+#botao{
+    margin-left: 8px;
+    
+}
+#bot{
+    margin-top: 10px;
+}
+
+.card-body{
+    text-align: center;
+}
+     
+     
+     

@@ -1,0 +1,23 @@
+/*Início do footer*/
+#rodape{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #033157;
+    color: #b5b5b5;
+    margin-top:6.7%;
+    padding:2%;
+    margin-top:3%;
+    display: block;
+    text-align:center;
+    height: 2px;
+
+
+}
+#textorodape{
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 12px;
+    letter-spacing:3px;
+}
+/*fim  do footer*/
