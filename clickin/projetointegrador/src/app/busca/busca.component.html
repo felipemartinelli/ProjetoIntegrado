@@ -1,0 +1,134 @@
+<div class="container-fluid gedf-wrapper">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="h5">@GreenTeam</div>
+                        <div class="h7">Desenvolvedores Java Full-Stack
+                        </div>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Seguidores</div>
+                            <div class="h5">20.000</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Seguindo</div>
+                            <div class="h5">0</div>
+                        </li>
+    
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 gedf-main">
+    
+                <!--- Publicar-->
+                <div class="card gedf-card mb-5">
+                    <div class="card-header">
+                        <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab"
+                                    aria-controls="posts" aria-selected="true">Publicação</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                                <div class="form-group">
+                                    <label class="sr-only" for="message">post</label>
+                                    <textarea class="form-control" id="message" rows="3"
+                                        placeholder="O que você está pensando?"></textarea>
+                                </div>
+    
+                            </div>
+                            <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="customFile">
+                                        <label class="custom-file-label" for="customFile">Upload Imagem</label>
+                                    </div>
+                                </div>
+                                <div class="py-4"></div>
+                            </div>
+                        </div>
+                        <div class="btn-toolbar justify-content-between">
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary">Publicar</button>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <!-- Publicar /////-->
+    
+    
+    
+    
+    
+    
+                <!--- \\\\\\\Post-->
+                <div *ngIf='vetorOunao == true'>
+                    <div class="card gedf-card mt-4" *ngFor="let item of _post">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="mr-2">
+                                        <img class="rounded-circle" width="45" src="{{item.linkimg}}" alt="">
+                                    </div>
+                                    <div class="ml-2">
+                                        <div class="h5 m-0">Generation Brasil</div>
+                                    </div>
+                                </div>
+                            <div>
+                        </div>
+                    </div>
+    
+    
+    
+                            <div class="card-body">
+                                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> {{item.dataInclusao}}</div>
+                                <a class="card-link" href="#">
+                                    <h5 class="card-title">{{item.titulo}}</h5>
+                                </a>
+    
+                                <p class="card-text">
+                                    {{item.texto}}
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Curtir</a>
+                                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentar</a>
+                                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Compartilhar</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <!-- Post /////-->
+    
+    
+            <!--- \\\\\\\Post-->
+            
+    
+    
+            <div class="col-md-3">
+                <div class="card gedf-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Buscar Publicação</h5>
+                        <p class="card-text">Digite o Id para retornar uma publicação:</p>
+                        <input type="text" placeholder="Digite o ID" [(ngModel)]="idBusca">
+                        <span *ngIf='_msgErro'>{{_msgErro}}</span>
+                        <br>
+                        <br>
+                        <button (click)="pesquisar();" class="btn btn-primary">Buscar</button>
+                    </div>
+                </div>
+    
+    
+    
+            </div>
+    
+        </div>
+    </div>

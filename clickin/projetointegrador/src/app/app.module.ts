@@ -11,6 +11,7 @@ import { QuemsomosComponent } from './quemsomos/quemsomos.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './feed/feed.component';
+import { BuscaComponent } from './busca/busca.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FeedComponent } from './feed/feed.component';
     QuemsomosComponent,
     ContatoComponent,
     HomeComponent,
-    FeedComponent
+    FeedComponent,
+    BuscaComponent
   ],
   imports: [
     BrowserModule,

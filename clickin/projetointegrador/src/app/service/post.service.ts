@@ -12,7 +12,7 @@ export class PostService {
     return this.http.get("http://cloud.professorisidro.com.br:8088/postagens");
   }
 
-  recuperaTarefaPeloID(id:number){
+  recuperaPostPeloID(id:number){
     return this.http.get("http://cloud.professorisidro.com.br:8088/postagens/"+id);
   }
 
