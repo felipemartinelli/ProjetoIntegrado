@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   private _msgSenha: string = null;
   private _msgSenhaForte: string = null;
   private _msgSenhaFraca: string = null;
+  private cont = 0;
 
   constructor() { }
 
@@ -25,7 +26,7 @@ export class NavbarComponent implements OnInit {
   }
 
   private valida(){
-    var cont = 0;
+    
 
     if(this.email == null || this.nomeCompleto == null || this.telefone == null || this.senha == null || this.senhaRepetida == null){
       alert("Preencha todos os campos corretamente!");
@@ -37,12 +38,12 @@ export class NavbarComponent implements OnInit {
         this._msgErroEmail = "Digite um e-mail valido";
       }
       else{
-          cont++;
+          this.cont++;
           this._msgErroEmail = "";
       }
 
       if(this.telefone.toString().length >= 10 && this.telefone.toString().length <=11){
-          cont++;
+          this.cont++;
           this._msgErroTelefone = "";       
       }
       else{
@@ -53,7 +54,7 @@ export class NavbarComponent implements OnInit {
         this._msgErroNome = "Digite nome e sobrenome";
       }
       else{
-          cont++;
+          this.cont++;
           this._msgErroNome = "";
       }
 
@@ -63,10 +64,31 @@ export class NavbarComponent implements OnInit {
         else{
           if(this.senha.length >= 10 && (this.senha.indexOf("@") != -1 || this.senha.indexOf("#") != -1 || this.senha.indexOf("$") != -1 || this.senha.indexOf("&") != -1) || this.senha.indexOf("%") != -1)
           {
+            this.cont++;
+          }
+        
+        }
+
+          if(this.cont >= 4)
+          {
+              alert("Cadastro efetuado com sucesso!");
+              this.cont = 0;
+          }
+
+        }     
+
+
+
+    }
+
+
+    private forcaSenha(){
+      
+          if(this.senha.length >= 10 && (this.senha.indexOf("@") != -1 || this.senha.indexOf("#") != -1 || this.senha.indexOf("$") != -1 || this.senha.indexOf("&") != -1) || this.senha.indexOf("%") != -1)
+          {
             this._msgSenhaForte = "Senha Forte";
             this._msgSenha = null;
             this._msgSenhaFraca = null;
-            cont++;
           }
           else{
             this._msgSenhaFraca = "Senha Fraca";
@@ -74,18 +96,7 @@ export class NavbarComponent implements OnInit {
             this._msgSenha = null;
             }
         
-        }
-
-          if(cont >= 4)
-          {
-              alert("Cadastro efetuado com sucesso!");
-              cont = 0;
-          }
-
-        }     
-
-
-
+        
     }
 
   }
