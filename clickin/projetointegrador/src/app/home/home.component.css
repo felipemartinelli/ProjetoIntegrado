@@ -14,8 +14,8 @@ h1{
     position: absolute; 
     left: 800px; /* posiciona a 90px para a esquerda */ 
     top: 120px; /* posiciona a 70px para baixo */
-    width: 220px;
-    right: 220px;
+    width: 240px;
+    right: 240px;
 }
 .itens{
     margin-top: 20%;
