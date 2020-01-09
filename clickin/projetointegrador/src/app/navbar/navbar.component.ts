@@ -66,6 +66,9 @@ export class NavbarComponent implements OnInit {
           {
             this.cont++;
           }
+          else{
+            this.cont++;
+          }
         
         }
 
