@@ -21,7 +21,7 @@
         <div class="col-md-2">
             <div class="col-md-4-mb-10 mt-3 itenNav">
                 <nav class="nav nav-pills nav-fill">
-                <a class="nav-item nav-link text-secondary" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
+                <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
                 <button type="button"  data-toggle="modal" data-target="#modalExemplo" class="btn btn-outline-dark">Entrar</button>
                 </nav>
                 </div>
@@ -78,7 +78,7 @@
               <h5 class="card-title text-center">
                 Cadastre-se
               </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -86,33 +86,42 @@
               <form class="form-signin">
                 <div class="form-label-group">
                   <label for="inputNome">Nome Completo</label>
-                  <input type="nome" id="inputnome" class="form-control" placeholder="Digite seu nome completo" required autofocus>
+                  <input type="nome" id="inputnome" class="form-control" [(ngModel)]="nomeCompleto" [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required autofocus>
+                  <span id = "spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
                 </div>
                 <div class="form-label-group mt-3">
                   <label for="inputEmail">E-mail</label>
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Digite seu e-mail"
+                  <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail"
                     required autofocus>
+                    <span id = "spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
                 </div>
                 <div class="form-label-group mt-3">
                   <label for="inputTelefone">Telefone</label>
-                  <input type="telefone" id="inputTelefone" class="form-control" placeholder="Digite o seu telefone" required
+                  <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required
                     autofocus>
+                    <span id = "spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
                 </div>
                 <div class="form-label-group mt-3">
                   <label for="inputPassword">Senha</label> 
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Digite a sua senha (minimo de 10 caracteres)" required>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)" required>
+             
                   </div>
                   <div class="form-label-group mt-3">
                       <label for="inputPassword">Confirme a senha</label>
-                      <input type="password" id="inputPassword" class="form-control" placeholder="Repita a sua senha" required>
+                      <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}" placeholder="Repita a sua senha" required>
+                      <span id = "spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
+                      <span id = "spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
+                      <span id = "spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
                     </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" type="submit">Cadastrar</button>
+
+                  
+                <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" (click)="valida();">Cadastrar</button>
                 <hr class="my-4">
               </form>
             </div>
           </div>
         </div>
       </div>
-    
+
     </div>
     

@@ -16,3 +16,19 @@
 .nav-link{
     color: black;
 } 
+
+#spanPadrao{
+    color:red;
+}
+
+#spanSenhaFraca{
+    color: rgb(206, 206, 5);
+}
+
+#spanSenhaForte{
+    color: green;
+}
+
+#cadastro{
+    color: rgb(151,151,151);
+}

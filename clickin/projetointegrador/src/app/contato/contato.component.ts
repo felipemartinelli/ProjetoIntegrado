@@ -41,7 +41,7 @@ export class ContatoComponent implements OnInit {
                 }
 
                 if(this.nomeCompleto.indexOf(" ")== -1){
-                  this._msgErroNome = "Digite um nome valido";
+                  this._msgErroNome = "Digite seu nome completo";
                 }
                 else{
                     cont++;
@@ -56,7 +56,7 @@ export class ContatoComponent implements OnInit {
                     this._msgErroTelefone = "";
                 }
                 if(this.mensagem == ""){
-                  this._msgErroMensagem = "Digite uma mensagem valido";
+                  this._msgErroMensagem = "Digite uma mensagem valida";
                 }
                 else{
                     cont++;
