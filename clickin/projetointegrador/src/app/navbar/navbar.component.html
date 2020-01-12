@@ -59,10 +59,6 @@
                 </div>
                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
                 <hr class="my-4">
-                <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
-                    class="fab fa-google mr-2"></i> Entrar com Google</button>
-                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
-                    class="fab fa-facebook-f mr-2"></i> Entra com Facebook</button>
               </form>
             </div>
     
@@ -103,14 +99,15 @@
                 </div>
                 <div class="form-label-group mt-3">
                   <label for="inputPassword">Senha</label> 
-                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)" required>
+                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)" (keypress) = "forcaSenha();" (keyup) = "forcaSenha();" required data-toggle="tooltip" title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+                  
                   <span id = "spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
                   <span id = "spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
-             
                   </div>
+
                   <div class="form-label-group mt-3">
                       <label for="inputPassword">Confirme a senha</label>
-                      <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}" (click)="forcaSenha();" placeholder="Repita a sua senha" required>
+                      <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}"  placeholder="Repita a sua senha" required>
                       <span id = "spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
                       
                     </div>

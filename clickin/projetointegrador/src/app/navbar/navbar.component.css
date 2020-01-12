@@ -32,3 +32,13 @@
 #cadastro{
     color: rgb(151,151,151);
 }
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}

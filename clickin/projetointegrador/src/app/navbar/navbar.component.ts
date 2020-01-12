@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
     else{
 
       if(this.email.indexOf("@") == -1 || this.email.indexOf(".") == -1){
-        this._msgErroEmail = "Digite um e-mail valido";
+        this._msgErroEmail = "Digite um e-mail válido";
       }
       else{
           this.cont++;
@@ -47,17 +47,26 @@ export class NavbarComponent implements OnInit {
           this._msgErroTelefone = "";       
       }
       else{
-        this._msgErroTelefone = "Digite um telefone valido";
+        this._msgErroTelefone = "Digite um telefone válido";
       }
 
-      if(this.nomeCompleto.indexOf(" ")== -1){
+      if (!this.isTipo(this.nomeCompleto))
+      {
+        this._msgErroNome = "Nome e/ou Sobrenome Inválidos";
+      }
+      else{
+        this.cont++;
+        this._msgErroNome = "";
+      }
+
+ /*     if(this.nomeCompleto.indexOf(" ")== -1){
         this._msgErroNome = "Digite nome e sobrenome";
       }
       else{
           this.cont++;
           this._msgErroNome = "";
       }
-
+*/
       if(this.senha != this.senhaRepetida){
         this._msgSenha = "As senhas digitadas não correspondem";
       }
@@ -76,6 +85,10 @@ export class NavbarComponent implements OnInit {
           {
               alert("Cadastro efetuado com sucesso!");
               this.cont = 0;
+              
+          }
+          else{
+            this.cont = 0;
           }
 
         }     
@@ -101,6 +114,12 @@ export class NavbarComponent implements OnInit {
         
         
     }
+
+    public isTipo(pVal) { 
+      var reTipo = /[A-z][ ][A-z]/; 
+      return reTipo.test(pVal); 
+    }
+
 
   }
 
