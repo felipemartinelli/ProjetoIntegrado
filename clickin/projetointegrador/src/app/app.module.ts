@@ -12,6 +12,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { HomeComponent } from './home/home.component';
 import { FeedComponent } from './feed/feed.component';
 import { BuscaComponent } from './busca/busca.component';
+import { ListagemComponent } from './listagem/listagem.component';
+import { DetalheComponent } from './detalhe/detalhe.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { BuscaComponent } from './busca/busca.component';
     ContatoComponent,
     HomeComponent,
     FeedComponent,
-    BuscaComponent
+    BuscaComponent,
+    ListagemComponent,
+    DetalheComponent
   ],
   imports: [
     BrowserModule,

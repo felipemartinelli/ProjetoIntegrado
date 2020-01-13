@@ -1,125 +1,124 @@
+<div class="row">
+  <div class="col-md-7">
+      <nav class="navbar navbar-expand-lg navbar-transparent ">
 
-    <div class="row">
-        <div class="col-md-7">
-            <nav class="navbar navbar-expand-lg navbar-transparent ">
-  
-                <a [routerLink]="'/home'" class="titulo"><strong><h1> Click<strong>In</strong> </h1> </strong></a>
-                <a class="navbar-brand" href="#">
-                 
-              </a>
-                <a class="nav-link" [routerLink]="'/quemsomos'">Quem Somos</a>
-                <a class="nav-link" [routerLink]="'/feed'">Feed</a>
-                <a class="nav-link" [routerLink]="'/contato'">Contato</a>
-               
-              </nav>
-        </div>
-  
-        <div class="col-md-2">
-  
-        </div>
-  
-        <div class="col-md-2">
-            <div class="col-md-4-mb-10 mt-3 itenNav">
-                <nav class="nav nav-pills nav-fill">
-                <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
-                <button type="button"  data-toggle="modal" data-target="#modalExemplo" class="btn btn-outline-dark">Entrar</button>
-                </nav>
-                </div>
-                
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="card-title text-center">
-                Entrar
-              </h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="form-signin">
-                <div class="form-label-group">
-                  <label for="inputEmail">E-mail</label>
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required
-                    autofocus>
-                </div>
-                <div class="form-label-group mt-3">
-                  <label for="inputPassword">Senha</label>
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-                </div>
-                <div class="custom-control custom-checkbox mb-3 mt-3">
-                  <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <br>
-                  <a href= "#">Esqueceu a senha? Clique aqui</a>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
-                <hr class="my-4">
-              </form>
-            </div>
-    
+          <a [routerLink]="'/home'" class="titulo"><strong><h1> Click<strong>In</strong> </h1> </strong></a>
+          <a class="navbar-brand" href="#">
+           
+        </a>
+          <a class="nav-link" [routerLink]="'/quemsomos'">Quem Somos</a>
+          <a class="nav-link" [routerLink]="'/feed'">Feed</a>
+          <a class="nav-link" [routerLink]="'/contato'">Contato</a>
+          <a class="nav-link" [routerLink]="'/listagem'">Listagem</a>
+         
+        </nav>
+  </div>
+
+  <div class="col-md-2">
+
+  </div>
+
+  <div class="col-md-2">
+      <div class="col-md-4-mb-10 mt-3 itenNav">
+          <nav class="nav nav-pills nav-fill">
+          <a type="button" class="btn btn-link" id="cadastro" data-toggle="modal" data-target="#modalCadastro">Cadastre-se</a>
+          <button type="button"  data-toggle="modal" data-target="#modalExemplo" class="btn btn-outline-dark">Entrar</button>
+          </nav>
           </div>
-        </div>
+          
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="card-title text-center">
+          Entrar
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-          <!--Modal cadastro-->
-      <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="card-title text-center">
-                Cadastre-se
-              </h5>
-              <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form class="form-signin">
-                <div class="form-label-group">
-                  <label for="inputNome">Nome Completo</label>
-                  <input type="nome" id="inputnome" class="form-control" [(ngModel)]="nomeCompleto" [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required autofocus>
-                  <span id = "spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
-                </div>
-                <div class="form-label-group mt-3">
-                  <label for="inputEmail">E-mail</label>
-                  <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail"
-                    required autofocus>
-                    <span id = "spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
-                </div>
-                <div class="form-label-group mt-3">
-                  <label for="inputTelefone">Telefone</label>
-                  <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required
-                    autofocus>
-                    <span id = "spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
-                </div>
-                <div class="form-label-group mt-3">
-                  <label for="inputPassword">Senha</label> 
-                  <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)" (keypress) = "forcaSenha();" (keyup) = "forcaSenha();" required data-toggle="tooltip" title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
-                  
-                  <span id = "spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
-                  <span id = "spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
-                  </div>
-
-                  <div class="form-label-group mt-3">
-                      <label for="inputPassword">Confirme a senha</label>
-                      <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}"  placeholder="Repita a sua senha" required>
-                      <span id = "spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
-                      
-                    </div>
-
-                  
-                <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" (click)="valida();">Cadastrar</button>
-                <hr class="my-4">
-              </form>
-            </div>
+      <div class="modal-body">
+        <form class="form-signin">
+          <div class="form-label-group">
+            <label for="inputEmail">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required
+              autofocus>
           </div>
-        </div>
+          <div class="form-label-group mt-3">
+            <label for="inputPassword">Senha</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+          </div>
+          <div class="custom-control custom-checkbox mb-3 mt-3">
+            <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <br>
+            <a href= "#">Esqueceu a senha? Clique aqui</a>
+          </div>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+          <hr class="my-4">
+        </form>
       </div>
 
     </div>
-    
+  </div>
+</div>
+    <!--Modal cadastro-->
+<div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="card-title text-center">
+          Cadastre-se
+        </h5>
+        <button type="button " class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-signin">
+          <div class="form-label-group">
+            <label for="inputNome">Nome Completo</label>
+            <input type="nome" id="inputnome" class="form-control" [(ngModel)]="nomeCompleto" [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required autofocus>
+            <span id = "spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+          </div>
+          <div class="form-label-group mt-3">
+            <label for="inputEmail">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail"
+              required autofocus>
+              <span id = "spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+          </div>
+          <div class="form-label-group mt-3">
+            <label for="inputTelefone">Telefone</label>
+            <input type="number" id="inputTelefone" class="form-control" [(ngModel)]="telefone" [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required
+              autofocus>
+              <span id = "spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
+          </div>
+          <div class="form-label-group mt-3">
+            <label for="inputPassword">Senha</label> 
+            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)" (keypress) = "forcaSenha();" (keyup) = "forcaSenha();" required data-toggle="tooltip" title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+            
+            <span id = "spanSenhaFraca" *ngIf='_msgSenhaFraca'>{{_msgSenhaFraca}}</span>
+            <span id = "spanSenhaForte" *ngIf='_msgSenhaForte'>{{_msgSenhaForte}}</span>
+            </div>
+
+            <div class="form-label-group mt-3">
+                <label for="inputPassword">Confirme a senha</label>
+                <input type="password" id="inputPassword" class="form-control" [(ngModel)]="senhaRepetida" [ngModelOptions]="{standalone: true}"  placeholder="Repita a sua senha" required>
+                <span id = "spanPadrao" *ngIf='_msgSenha'>{{_msgSenha}}</span>
+                
+              </div>
+
+            
+          <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" (click)="valida();">Cadastrar</button>
+          <hr class="my-4">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>

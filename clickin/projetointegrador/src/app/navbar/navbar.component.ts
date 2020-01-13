@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../model/Usuario';
+import { UsuarioService } from '../service/usuario.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+
+  public usuario: Usuario = new Usuario();
 
   private nomeCompleto:string;
   private email:string;
@@ -20,7 +24,7 @@ export class NavbarComponent implements OnInit {
   private _msgSenhaFraca: string = null;
   private cont = 0;
 
-  constructor() { }
+  constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
   }
@@ -85,6 +89,7 @@ export class NavbarComponent implements OnInit {
           {
               alert("Cadastro efetuado com sucesso!");
               this.cont = 0;
+              this.enviarDados();
               
           }
           else{
@@ -118,6 +123,27 @@ export class NavbarComponent implements OnInit {
     public isTipo(pVal) { 
       var reTipo = /[A-z][ ][A-z]/; 
       return reTipo.test(pVal); 
+    }
+
+
+    enviarDados(){
+      this.usuario.nome = this.nomeCompleto;
+      this.usuario.email = this.email;
+      this.usuario.telefone = this.telefone;
+      this.usuario.senha = this.senha;
+
+      console.log(this.usuario);
+      this.srv.insere(this.usuario).subscribe(
+        res =>{
+          console.log(res);
+          console.log("Inserido com Sucesso");
+        },
+        err=>{
+          console.log(err);
+          console.log("Erro ao inserir");
+        }
+      )
+
     }
 
 
