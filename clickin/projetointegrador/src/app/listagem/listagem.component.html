@@ -1,10 +1,31 @@
 <div class="row">
-    <div class="col-md-12">
-        <div *ngFor = 'let USER of listaUser'>
-            <p>
-                <a [routerLink]="['/detalhe',USER.idUsuario]"> {{ USER.nome }} </a>
-            </p>
-
-        </div>
+    <div class="col-md-12" id="linha1">
+        <h1 >Listagem</h1>
     </div>
+</div>
+<div class="row " >
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6">
+        <ul>
+            <div *ngFor='let USER of listaUser'>
+                <ul class="list-group">
+                    <li class="list-group-item row ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p>Nome do Usuario</p>
+                                <h4>{{ USER.nome }}</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="botao" id="centralizar" type="button"
+                                    class="btn btn-outline-info" [routerLink]="['/detalhe',USER.idUsuario]">Alterar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </div>
+    <div class="col-md-3"></div>
+
 </div>

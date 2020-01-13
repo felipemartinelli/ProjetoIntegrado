@@ -1,11 +1,29 @@
-<div class="row">
-    <div class="col-md-12">
-        Usuario: <input type="text" [(ngModel)] = "usuario.nome"><br/>
-        Email: <input type="text" [(ngModel)] = "usuario.email"><br/>
-        Telefone: <input type="text" [(ngModel)] = "usuario.telefone"><br/>
-        Senha: <input type="text" [(ngModel)] = "usuario.senha"><br/>
+<div class="modal-body">
+        <form class="form-signin">
+          <div class="form-label-group">
+            <label for="inputNome">Nome Completo</label>
+            <input type="nome" id="inputnome" class="form-control" [(ngModel)]="usuario.nome" [ngModelOptions]="{standalone: true}" placeholder="Digite seu nome completo" required autofocus>
+            <span id = "spanPadrao" *ngIf='_msgErroNome'>{{_msgErroNome}}</span>
+          </div>
+          <div class="form-label-group mt-3">
+            <label for="inputEmail">E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" [(ngModel)]="usuario.email" [ngModelOptions]="{standalone: true}" placeholder="Digite seu e-mail"
+              required autofocus>
+              <span id = "spanPadrao" *ngIf='_msgErroEmail'>{{_msgErroEmail}}</span>
+          </div>
+          <div class="form-label-group mt-3">
+            <label for="inputTelefone">Telefone</label>
+            <input type="text" id="inputTelefone" class="form-control" [(ngModel)]="usuario.telefone" [ngModelOptions]="{standalone: true}" placeholder="Digite o seu telefone" required
+              autofocus>
+              <span id = "spanPadrao" *ngIf='_msgErroTelefone'>{{_msgErroTelefone}}</span>
+          </div>
+          <div class="form-label-group mt-3">
+            <label for="inputPassword">Senha</label> 
+            <input type="password" id="inputPassword" class="form-control" [(ngModel)]="usuario.senha" [ngModelOptions]="{standalone: true}" placeholder="Digite a sua senha (minimo de 10 caracteres)" (keypress) = "forcaSenha();" (keyup) = "forcaSenha();" required data-toggle="tooltip" title="Para a senha ser forte digite ao menos 10 dígitos e um caracter especial (@, %, #, &, $)">
+            
 
-        <button (click)="enviarAlteracoes();">Alterar</button>
-    </div>
+            
 
-</div>
+            
+          <button class="btn btn-lg btn-primary btn-block text-uppercase mt-4" (click)="enviarAlteracoes();" [routerLink]="'/listagem'">Alterar</button>
+

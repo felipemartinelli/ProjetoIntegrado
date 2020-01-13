@@ -13,6 +13,7 @@ export class DetalheComponent implements OnInit {
 
   public usuario: Usuario = new Usuario();
   private id: number;
+  display='none';
 
 
   constructor(private rota:ActivatedRoute, private srv:UsuarioService) { }
@@ -28,10 +29,10 @@ export class DetalheComponent implements OnInit {
 
 enviarAlteracoes(){
   this.srv.atualiza(this.usuario).subscribe((res)=>{
-    console.log("Atualizado com sucesso");
+    alert("Atualizado com sucesso");
   },
   (err)=>{
-    console.log("Erro ao atualizar");
+    alert("Erro ao atualizar");
     console.log(err);
   });
 

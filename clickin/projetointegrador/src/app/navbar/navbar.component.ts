@@ -63,14 +63,6 @@ export class NavbarComponent implements OnInit {
         this._msgErroNome = "";
       }
 
- /*     if(this.nomeCompleto.indexOf(" ")== -1){
-        this._msgErroNome = "Digite nome e sobrenome";
-      }
-      else{
-          this.cont++;
-          this._msgErroNome = "";
-      }
-*/
       if(this.senha != this.senhaRepetida){
         this._msgSenha = "As senhas digitadas não correspondem";
       }
@@ -87,7 +79,6 @@ export class NavbarComponent implements OnInit {
 
           if(this.cont >= 4)
           {
-              alert("Cadastro efetuado com sucesso!");
               this.cont = 0;
               this.enviarDados();
               
@@ -135,12 +126,11 @@ export class NavbarComponent implements OnInit {
       console.log(this.usuario);
       this.srv.insere(this.usuario).subscribe(
         res =>{
-          console.log(res);
-          console.log("Inserido com Sucesso");
+          alert("Cadastro efetuado com sucesso!");
         },
         err=>{
           console.log(err);
-          console.log("Erro ao inserir");
+          alert("Erro ao inserir");
         }
       )
 

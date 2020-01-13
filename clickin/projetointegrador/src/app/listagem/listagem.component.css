@@ -1,0 +1,12 @@
+#centralizar{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+#linha1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+}
+
