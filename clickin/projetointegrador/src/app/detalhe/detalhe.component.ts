@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioService } from '../service/usuario.service';
+import { Usuario } from '../model/Usuario';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-detalhe',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalheComponent implements OnInit {
 
-  constructor() { }
+  public usuario: Usuario = new Usuario();
+  private id: number;
+
+
+  constructor(private rota:ActivatedRoute, private srv:UsuarioService) { }
 
   ngOnInit() {
-  }
+      this.id = this.rota.snapshot.params["id"];
+
+      this.srv.recuperaDetalhe(this.id).subscribe((res:Usuario)=>{
+      this.usuario = res;
+  });
+
+}
+
+enviarAlteracoes(){
+  this.srv.atualiza(this.usuario).subscribe((res)=>{
+    console.log("Atualizado com sucesso");
+  },
+  (err)=>{
+    console.log("Erro ao atualizar");
+    console.log(err);
+  });
+
+}
 
 }

@@ -1,1 +1,11 @@
-<p>detalhe works!</p>
+<div class="row">
+    <div class="col-md-12">
+        Usuario: <input type="text" [(ngModel)] = "usuario.nome"><br/>
+        Email: <input type="text" [(ngModel)] = "usuario.email"><br/>
+        Telefone: <input type="text" [(ngModel)] = "usuario.telefone"><br/>
+        Senha: <input type="text" [(ngModel)] = "usuario.senha"><br/>
+
+        <button (click)="enviarAlteracoes();">Alterar</button>
+    </div>
+
+</div>

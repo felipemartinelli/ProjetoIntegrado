@@ -5,17 +5,18 @@
 }
 h1{
     color: black;
-    text-align: left;
+    
     padding-top: 130px;
-    margin-left: 160px;
+    
     font-size: 48px;
+    
 }
 #simbolo{
     position: absolute; 
     left: 800px; /* posiciona a 90px para a esquerda */ 
     top: 120px; /* posiciona a 70px para baixo */
-    width: 240px;
-    right: 240px;
+    width: 200px;
+    right: 200px;
 }
 .itens{
     margin-top: 20%;
@@ -25,4 +26,11 @@ h1{
 }
 .itenNav{
     margin-left: 6%;
+}
+#foto{
+    display: flex;
+    justify-content: center;
+}
+.texto{
+    margin-left: 10px;
 }
