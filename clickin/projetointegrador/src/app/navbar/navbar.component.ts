@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
   private telefone:string;
   private senha: string;
   private senhaRepetida: string;
+  private senhaLogin: string;
+  private emailLogin: string;
   private _msgErroNome: string = null;
   private _msgErroTelefone: string = null;
   private _msgErroEmail: string = null;
@@ -133,6 +135,26 @@ export class NavbarComponent implements OnInit {
           alert("Erro ao inserir");
         }
       )
+
+    }
+
+
+
+    validaLogin(){
+
+      this.usuario.email = this.emailLogin;
+      this.usuario.senha = this.senhaLogin;
+
+      this.srv.recuperaLoginESenha(this.usuario).subscribe(
+        res =>{
+          alert("E-mail e senha validados com sucesso!");
+        },
+        err=>{
+          alert("Usuário não cadastrado no sistema");
+        }
+      )
+
+
 
     }
 

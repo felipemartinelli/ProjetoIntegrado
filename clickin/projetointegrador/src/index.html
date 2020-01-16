@@ -15,6 +15,18 @@
   <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Chivo|Prompt|Quicksand&display=swap" rel="stylesheet">
 
+  <script>
+    function fonte(e){
+      var elemento = $(".acessibilidade");
+      var fonte = elemento.css('font-size');
+      if (e == 'a') {
+        elemento.css("fontSize", parseInt(fonte) + 1);
+      } else if('d'){
+        elemento.css("fontSize", parseInt(fonte) - 1);
+      }
+    }
+    </script>
+
 
   
 </head>

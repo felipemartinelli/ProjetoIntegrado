@@ -24,4 +24,9 @@ export class UsuarioService {
   public atualiza(usuario: Usuario){
     return this.http.put("http://cloud.professorisidro.com.br:8088/usuario", usuario);
   }
+
+  public recuperaLoginESenha(usuario: Usuario){
+    return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/login",usuario)
+  }
+
 }

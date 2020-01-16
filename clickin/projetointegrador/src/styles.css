@@ -3,4 +3,6 @@
 body{
     background: rgb(178, 221, 248);
     background: linear-gradient(90deg, rgb(253,253,253) 0%, rgb(201,229,241) 35%, rgb(197, 229, 247) 100%);
+    padding: 0%;
+    margin: 0%;
 }

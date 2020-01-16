@@ -45,11 +45,11 @@
           <div class="form-label-group">
             <label for="inputEmail">E-mail</label>
             <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required
-              autofocus>
+              autofocus [(ngModel)]="emailLogin" [ngModelOptions]="{standalone: true}">
           </div>
           <div class="form-label-group mt-3">
             <label for="inputPassword">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" [(ngModel)]="senhaLogin" [ngModelOptions]="{standalone: true}" required>
           </div>
           <div class="custom-control custom-checkbox mb-3 mt-3">
             <label class="custom-control-label " for="customCheck1">Lembrar-me</label>
@@ -57,7 +57,7 @@
             <br>
             <a href= "#">Esqueceu a senha? Clique aqui</a>
           </div>
-          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" (click)="validaLogin();">Entrar</button>
           <hr class="my-4">
         </form>
       </div>
